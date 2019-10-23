@@ -11,10 +11,11 @@
 
 		//mở file Common.php, file này chứa hàm Load() chạy hệ thống
 		include_once PATH_SYSTEM . '/core/Common.php';
-
+		if($_GET['c']!='ajax')
 		include PATH_TEMPLATE.'/header.php';
 		// Chương trình chính
 		load();
+		if($_GET['c']!='ajax')
 		include PATH_TEMPLATE.'/footer.php';
 	?>
 	

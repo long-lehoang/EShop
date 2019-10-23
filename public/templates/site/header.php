@@ -13,7 +13,6 @@
     <link href="public/css/animate.css" rel="stylesheet">
 	<link href="public/css/main1.css" rel="stylesheet">
 	<link href="public/css/responsive.css" rel="stylesheet">
-
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -99,7 +98,7 @@
 								echo '<li><a href="?a=login"><i>Đăng Nhập</i></a><a href="?a=register"><i>Đăng Kí</i></a></li>';
 								else{
 									echo '<li><a href="?a=olddeal"><i class="fa fa-crosshairs">Lịch Sử Đặt Hàng</i> </a></li>';
-								 	echo '<li><i>'.$_SESSION['name'].'</i> <a href="?c=user&a=logout"><i>Đăng Xuất</i></a></li>';
+								 	echo '<li><i id="user_name">'.$_SESSION['name'].'</i> <a href="?c=user&a=logout"><i>Đăng Xuất</i></a></li>';
 								}
 								?>
 								<!-- <li><a href="?c=login"><i class="fa fa-lock"></i> Login</a></li> -->

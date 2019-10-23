@@ -69,7 +69,7 @@ header("Content-Type:text/html; charset:UTF-8");
 									</form>
 								</span>
 								<p><b>Nhà Sản Xuất:</b><?php echo $product['productor'] ?></p>
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+								<a href=""><img src="public/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
 							</div><!--/product-information-->
 							<div class="product-infomation">
 								<h4>Mô Tả Chi Tiết</h4>
@@ -77,7 +77,42 @@ header("Content-Type:text/html; charset:UTF-8");
 							</div>
 						</div>
 					</div><!--/product-details-->
-				
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+							<div class="tab-pane fade active in" id="reviews" >
+								
+								<div class="col-sm-12">
+									<h4>Đánh Giá Sản Phẩm</h4>
+									<input id="product_id" style=" visibility: hidden;" value="<?php echo $_GET['id']; ?>">
+									<div id="list-comment">
+										<!-- <div class="col-sm-1"></div>
+										<div class="col-sm-12" style="border-style: inset;">
+											<p><b><i>Name</i></b></p>
+											<p>Rating:
+											<i class="fa fa-star fa-1x" style="color:yellow"></i>
+											<i class="fa fa-star fa-1x" style="color:yellow"></i>
+											<i class="fa fa-star fa-1x" style="color:yellow"></i>
+											</p>
+											<p>This is comment</p>
+											<a href=""><i>Tra Loi</i></a>
+										</div> -->
+									</div>
+									<div>
+										<div id="review-star">
+											<i class="fa fa-star-o fa-1x" data-index="0"></i>
+											<i class="fa fa-star-o fa-1x" data-index="1"></i>
+											<i class="fa fa-star-o fa-1x" data-index="2"></i>
+											<i class="fa fa-star-o fa-1x" data-index="3"></i>
+											<i class="fa fa-star-o fa-1x" data-index="4"></i>
+										</div>
+										<div id="comment-product">
+											<input type="text" name="comment" id="comment">
+											<button type="submit" id="submit">Gửi</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+					</div><!--/category-tab-->
 				</div>
 			</div>
 		</div>

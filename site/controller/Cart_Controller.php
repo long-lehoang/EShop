@@ -16,7 +16,6 @@
         }
         public function checkoutAction()
         {
-            
             $this->model->load('checkout');
         }
     }
