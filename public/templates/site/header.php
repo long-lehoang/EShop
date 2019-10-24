@@ -9,9 +9,10 @@
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/font-awesome.min.css" rel="stylesheet">
     <link href="public/css/prettyPhoto.css" rel="stylesheet">
-    <link href="public/css/price-range.css" rel="stylesheet">
+    <!-- <link href="public/css/price-range.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" integrity="sha256-p6xU9YulB7E2Ic62/PX+h59ayb3PBJ0WFTEQxq0EjHw=" crossorigin="anonymous" />
     <link href="public/css/animate.css" rel="stylesheet">
-	<link href="public/css/main1.css" rel="stylesheet">
+	<link href="public/css/main1.css" rel="stylesheet">	
 	<link href="public/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -27,7 +28,11 @@
 		.slidecontainer {
 		width: 60%;
 		}
-
+		#loading{
+			text-align:center;
+			background: url('public/images/ajax-loader.gif') no-repeat center;
+			height:150px;
+		}
 		.slider {
 		-webkit-appearance: none;
 		width: 100%;

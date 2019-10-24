@@ -10,4 +10,8 @@ class Ajax_Controller extends Controller {
     {
         $this->model->load('add-comment');
     }
+    public function filterAction()
+    {
+        $this->model->load('filter-data');
+    }
 }

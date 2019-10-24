@@ -63,7 +63,7 @@ function addComment(){
             product_id: parseInt($('#product_id').val()),
             comment: $('#comment').val(),
             star: ratedIndex+1,
-            parent,
+            parent:parent
         },
         success: function(){
             $('#comment').val('');
