@@ -8,7 +8,7 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
         header('Content-Type:text/html; charset=UTF-8');
         if (!isset($_SESSION['name']))
         die('Ban khong duoc phep thuc hien tac vu nay');
-                
+        
         try
         {
             $id = $_GET['id'];
@@ -44,7 +44,7 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
                         <img src="<?php echo $data['image']; ?>"/>
                         </td>
                     </tr>
-                    <tr><td colspan="2" align="center"><input type="submit" value="Upload" name="upload"></td></tr>
+                    <tr><td colspan="2" align="center"><input type="submit" value="Update" name="upload"></td></tr>
                 </table>
             </form>
         </div>

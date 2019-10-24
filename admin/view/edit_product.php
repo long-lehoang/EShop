@@ -50,6 +50,17 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
                         <tr>
                             <td>Hình Ảnh</td>
                             <td><input type="file" name="image[]" id="" multiple="multiple"></td>
+                            <?php 
+                            $stmt = $conn->prepare("SELECT * FROM IMAGE_PRODUCT WHERE id = :id");
+                            $stmt->execute([":id"=>$data['id']]);
+                            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($row as $image)
+                            {
+                            ?>
+                            <img src="<?php echo $image['image'];?>" alt="">
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <tr>
                             <td>Danh Mục</td>
@@ -86,9 +97,9 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
                         </tr>
                         <tr>
                             <td>Mô Tả </td>
-                            <td><textarea name="info" id="" cols="30" value=<?php echo $data['info']; ?> rows="10"></textarea>
+                            <td><textarea name="info" id="" cols="30" value="<?php echo $data['info']; ?>" rows="10"></textarea>
                                 <script>
-                                    CKEDITOR.replace('info');
+                                    CKEDITOR.replace("info");
                                 </script>
                             </td>
                         </tr>

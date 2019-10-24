@@ -15,36 +15,48 @@ if (!isset($_POST['upload']))
 $id = $_POST['id'];
 //get name
 $name = $_POST['name'];
-//get url image
-$img = $_FILES["image"]["name"];
 
-//check form
 if(!$name)
 {
     die('Enter full information');
 }
 
-//create url to save image on server
-$dst = 'upload/'.$img;
-
-//check extension of image
-$allowed = array('jpg','png','gif','jpeg');
-$ext=pathinfo($img,PATHINFO_EXTENSION);
-
-if(!in_array($ext,$allowed))
+//get url image
+if(!empty($_FILES["image"]["name"]))
 {
-    die('Image invalid');
-}
-//save file to server
-if(!move_uploaded_file($_FILES["image"]["tmp_name"],$dst))
-    die("Error upload!");
+    $img = $_FILES["image"]["name"];
 
-//insert category
-try{
-    $stmt = $conn->prepare('UPDATE CATEGORY SET name = :name,image =:image WHERE id = :id');
-    $stmt->execute([":name"=>$name,"image"=>$dst,":id"=>$id]);
-    echo "<script language='javascript'>alert('Thay Đổi Thành Công'); window.location='?c=view&a=category'</script>";
+    //create url to save image on server
+    $dst = 'upload/'.$img;
+
+    //check extension of image
+    $allowed = array('jpg','png','gif','jpeg');
+    $ext=pathinfo($img,PATHINFO_EXTENSION);
+    
+    if(!in_array($ext,$allowed))
+    {
+            die('Image invalid');
+    }
+    //save file to server
+    if(!move_uploaded_file($_FILES["image"]["tmp_name"],$dst))
+        die("Error upload!");
+    //insert category
+    try{
+        $stmt = $conn->prepare('UPDATE CATEGORY SET name = :name,image =:image WHERE id = :id');
+        $stmt->execute([":name"=>$name,"image"=>$dst,":id"=>$id]);
+        echo "<script language='javascript'>alert('Thay Đổi Thành Công'); window.location='?c=view&a=category'</script>";
+    }
+    catch(PDOException $e){
+        echo $e->getMessage;
+    }
 }
-catch(PDOException $e){
-    echo $e->getMessage;
+else{
+    try{
+        $stmt = $conn->prepare('UPDATE CATEGORY SET name = :name WHERE id = :id');
+        $stmt->execute([":name"=>$name,":id"=>$id]);
+        echo "<script language='javascript'>alert('Thay Đổi Thành Công'); window.location='?c=view&a=category'</script>";
+    }
+    catch(PDOException $e){
+        echo $e->getMessage;
+    }
 }

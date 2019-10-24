@@ -14,6 +14,8 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
     if (!isset($_SESSION['name']))
     die('Ban khong duoc phep thuc hien tac vu nay');
     
+    //die(var_dump($_POST['info']));
+
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
@@ -72,16 +74,17 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
         
         //UPDATE PRODUCT
         $stmt = $conn->prepare('UPDATE PRODUCT
-        SET name=:name,price=:price,quantity=:quantity,category_id=:category_id,productor_id=:productor_id
+        SET name=:name,price=:price,quantity=:quantity,category_id=:category_id,productor_id=:productor_id,info=:info
         WHERE id=:id');
         //
-        $stmt->bindParam(':id',$id);
+        
         $stmt->bindParam(':name',$name);
         $stmt->bindParam(':price',$price);
         $stmt->bindParam(':quantity',$quantity);
         $stmt->bindParam(':category_id',$category_id);
         $stmt->bindParam(':productor_id',$productor_id);
         $stmt->bindParam(':info',$info);
+        $stmt->bindParam(':id',$id);
         $stmt->execute();
 
         //if image null, do nothing
@@ -103,6 +106,6 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
     }
     catch(PDOException $e)
     {
-        die ($e->getMessage);
+        echo $e->getMessage();
     }
  
