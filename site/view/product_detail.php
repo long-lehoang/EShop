@@ -20,7 +20,7 @@ header("Content-Type:text/html; charset:UTF-8");
                                 $stmt->execute([":id"=>$_GET['id']]);
                                 $image = $stmt->fetch(PDO::FETCH_ASSOC);
                             ?>
-								<img src=<?php echo $image['image']; ?> alt="" />
+								<img class="img_active" src=<?php echo $image['image']; ?> alt="" />
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
 								
@@ -32,9 +32,9 @@ header("Content-Type:text/html; charset:UTF-8");
                                         foreach ($image as $i => $img)
                                         {
                                             if($i==0) echo '<div class="item active">
-										    <a href=""><img width="180" height="360" src='.$img['image'].' alt=""></a></div>';
+										    <img width="180" height="360" class="img" src='.$img['image'].' alt=""></div>';
                                             else echo '<div class="item ">
-										    <a href=""><img src='.$img['image'].' alt=""></a></div>';
+										    <img class="img" src='.$img['image'].' alt=""></div>';
                                         }
                                         ?>
 									</div>

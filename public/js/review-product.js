@@ -1,5 +1,7 @@
 var ratedIndex = -1;
 var parent = 0;
+var img = '';
+var img_active =$('.img_active').attr('src');
 
 $(document).ready(function(){
     resetStarColors();
@@ -23,6 +25,13 @@ $(document).ready(function(){
         if(ratedIndex!=-1)
             for(var i = 0; i <= ratedIndex; i++)
                 $('.fa-star-o:eq('+i+')').css('color', 'yellow');
+    });
+
+    $('.img').on('click',function(){
+        img = $(this).attr('src');
+        $(this).attr('src',img_active);
+        $('.img_active').attr('src',img);
+        img_active =$('.img_active').attr('src');
     });
 
     $('#submit').on('click',function(){

@@ -72,8 +72,5 @@ class Index_Controller extends Controller {
                 $this->view->show();
             }
         }
-    // public function pagingAction()
-    // {
-    //     $this->model->load('pagination');
-    // }
+
 }
