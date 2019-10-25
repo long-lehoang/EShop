@@ -40,9 +40,17 @@ if(isset($_POST['action']))
     //if has search_value
     if(isset($_POST['search']))
     {
+        if (strlen($_POST['search'])<4)
         $query .="
         AND name LIKE '%".$_POST['search']."%'
         ";
+        else 
+        {
+            $search = str_replace(" ","* ",$_POST['search']);
+            $query .="
+            AND MATCH(name) AGAINST('".$search."*' IN BOOLEAN MODE)
+            ";
+        }
     }
     //limit page
     $query .="LIMIT $offset,$no_of_records_per_page";
