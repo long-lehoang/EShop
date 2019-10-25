@@ -29,15 +29,5 @@ $(document).ready(function () {
             zIndex: 2147483647 // Z-Index for the overlay
         });
     });
-
-        $('.check_out').on('click',function(){
-            alert('ok');
-            if ($('#name').val()==''||$('#phone').val()==''||$('#address').val()==''||$('#email').val()=='')
-            {
-                alert("Vui lòng điền đầy đủ thông tin để thanh toán");
-                return false;
-            }
-        });	
-    
-    
+        
 });
