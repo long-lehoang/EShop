@@ -1,7 +1,6 @@
 
 	<?php
 		session_start();//session_start phai dat truoc cac the html
-
 		// Đường dẫn tới hệ  thống
 		define('PATH_SYSTEM', __DIR__ .'/system');
 		define('PATH_APPLICATION', __DIR__ . '/site');

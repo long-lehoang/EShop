@@ -60,6 +60,8 @@ function load_more()
         });
     }
 
+
+
 function get_filter(class_name)
     {
         var filter = [];
@@ -72,7 +74,7 @@ function get_filter(class_name)
 $(document).ready(function(){
 
     filter_data();
-    
+
     $('#search').keyup(function(){
         filter_data();
         

@@ -30,6 +30,8 @@
             
             // Gán nội dung vào danh sách view đã load
             $this->__content[] = $content;
+
+            return $content;
         }
         
 

@@ -11,6 +11,9 @@
     echo '<script src="public/js/filter-product.js"></script>';
     elseif (($_GET['c']==''||$_GET['c']=='index')&&($_GET['a']=='productdetail'))
     echo '<script src="public/js/review-product.js"></script>';
+    elseif (($_GET['c']==''||$_GET['c']=='index')&&($_GET['a']=='checkout'))
+    echo '<script src="public/js/checkout.js"></script>';
     ?>
+
 </body>
 </html>

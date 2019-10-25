@@ -62,7 +62,7 @@
 									<form method="post" action="?c=cart&a=checkout">
 										<?php 
 										try{	
-											$stmt = $conn->prepare('SELECT fullname,phone,address FROM USER WHERE id = :id');
+											$stmt = $conn->prepare('SELECT fullname,phone,address,email FROM USER WHERE id = :id');
 											$stmt->execute([":id"=>$_SESSION['user_id']]);
 											$user=$stmt->fetch(PDO::FETCH_ASSOC);
 										}
@@ -71,17 +71,19 @@
 											echo "Có Lỗi Xảy Ra";
 										}
 										?>
-										<input type="text" value="<?php echo $user['fullname'];?>" name="name">
-										<input type="text" value="<?php echo $user['phone'];?>" name="phone">
-										<input type="text" value="<?php echo $user['address'];?>" name="address">
-										
+										<input id ="name" type="text" value="<?php echo $user['fullname'];?>" name="name">
+										<input id ="phone" type="text" value="<?php echo $user['phone'];?>" name="phone">
+										<input id ="address" type="text" value="<?php echo $user['address'];?>" name="address">
+										<input id ="email" type="email" value="<?php echo $user['email'];?>" name="email">
+
 										<br>
 										<br>
 										<div align="center">
-											<button type="submit" class="btn btn-default check_out"><i class="">Đặt Hàng</i></button>
+											<button id="checkout" type="submit" class="btn btn-default check_out"><i class="">Đặt Hàng</i></button>
 										</div>
-										
+
 									</form>
+
 									<h4>Mã giảm giá/Quà Tặng</h4>
 									<form action="" method="post">
 										<input type="text" placeholder="Nhập ở đây..." name="voucher" autocomplete="off" size="2">
