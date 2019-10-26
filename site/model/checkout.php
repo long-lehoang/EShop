@@ -2,8 +2,10 @@
 if (!defined('PATH_SYSTEM')) die ('Bad Request');
 
 //connect db
-include_once PATH_SYSTEM.'/core/Model.php';
-//
+if(@include(PATH_SYSTEM.'/core/Model.php'))
+{
+    include_once PATH_SYSTEM.'/core/Model.php';
+}
 header('Content-Type:text/html; charset:UTF-8');
 if(!isset($_SESSION['cart']))
 exit('Không có sản phẩm để thanh toán');
