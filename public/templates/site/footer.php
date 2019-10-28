@@ -13,6 +13,8 @@
     echo '<script src="public/js/review-product.js"></script>';
     elseif (($_GET['c']==''||$_GET['c']=='index')&&($_GET['a']=='checkout'))
     echo '<script src="public/js/checkout.js"></script>';
+    elseif ($_GET['a']=='register')
+    echo '<script src="public/js/register.js"></script>';
     ?>
 
 </body>

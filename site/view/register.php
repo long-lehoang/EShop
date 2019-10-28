@@ -35,39 +35,39 @@
                     <h2 class="title">Registration</h2>
                     <form method="POST" action="?c=user&a=register">
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="NAME" name="fullname">
+                            <input class="input--style-1" type="text" placeholder="NAME" name="fullname" id="fullname">
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="USERNAME" name="username">
+                            <input class="input--style-1" type="text" placeholder="USERNAME" name="username" id="username">
                         </div>
 
                         <div class="row row-space">
                             <div class="input-group">
-                                <input class="input--style-1" type="password" placeholder="PASSWORD" name="password">
+                                <input class="input--style-1" type="password" placeholder="PASSWORD" name="password" id="password">
                             </div>
                             <div class="input-group">
-                                <input class="input--style-1" type="password" placeholder="CONFIRM PASSWORD" name="c_password">
+                                <input class="input--style-1" type="password" placeholder="CONFIRM PASSWORD" name="c_password" id="c_password">
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="input-group">    
-                                <input class="input--style-1" type="email" placeholder="EMAIL" name="email">
+                                <input class="input--style-1" type="email" placeholder="EMAIL" name="email" id="email">
                             </div>
                             <div class="input-group">
-                                <input class="input--style-1" type="text" placeholder="PHONE" name="phone">
+                                <input class="input--style-1" type="text" placeholder="PHONE" name="phone" id="phone">
                             </div>
                         </div>
                         <div class="row row-space">
                             <div >
                                 <div class="input-group">
-                                    <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" name="birthday">
+                                    <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" name="birthday" id="birthday">
                                     <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                 </div>
                             </div>
                             <div >
                                 
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="gender">
+                                        <select name="gender" id="gender">
                                             <option disabled="disabled" selected="selected" value="n">Giới tính</option>
                                             <option value="Nam">Nam</option>
                                             <option value="Nữ">Nữ</option>
@@ -78,10 +78,10 @@
                             </div>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-1" type="text" placeholder="ADDRESS" name="address">
+                            <input class="input--style-1" type="text" placeholder="ADDRESS" name="address" id="address">
                         </div>
                         <div class="p-t-20">
-                            <button class="btn btn--radius btn--green" type="submit">Submit</button>
+                            <button class="btn btn--radius btn--green" type="submit" id="submit">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -98,6 +98,5 @@
 
     <!-- Main JS-->
     <script src="public/js/global.js"></script>
-
 </body>
 </html>

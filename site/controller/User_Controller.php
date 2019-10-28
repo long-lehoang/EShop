@@ -19,4 +19,9 @@ class User_Controller extends Controller
     {
         $this->model->load('logout');
     }
+
+    public function change_passAction(){
+        //
+        $this->model->load('change_password');
+    }
 }

@@ -39,6 +39,13 @@ class Index_Controller extends Controller {
         $this->view->show();
     }
 
+    public function change_passAction()
+    {
+        $this->view->load('change_pass');
+        //show 
+        $this->view->show();
+    }
+
     //cart view
     public function cartAction()
     {
