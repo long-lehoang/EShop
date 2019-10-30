@@ -27,7 +27,7 @@ try{
         <div class="col-sm-1"></div>
         <div class="col-sm-11" >
         <p><b><i><?php echo $comment['name']; ?>
-        </i></b></p>
+        </i></b><?php echo $comment['time'];?></p>
 		<p>Rating:
         <?php 
         for ($i = 0 ;$i<$comment['star'];$i++)

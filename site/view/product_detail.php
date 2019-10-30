@@ -80,8 +80,25 @@ header("Content-Type:text/html; charset:UTF-8");
 					<div class="category-tab shop-details-tab"><!--category-tab-->
 							<div class="tab-pane fade active in" id="reviews" >
 								
-								<div class="col-sm-12">
-									<h4>Đánh Giá Sản Phẩm</h4>
+								<div class="col-sm-12" >
+									<h4>KHÁCH HÀNG NHẬN XÉT</h4>
+									<?php
+									if ($product['rate']!=0)
+									echo '<h5>Đánh Giá Trung Bình</h5>
+									<p style="color:red;font-size:20">'.$product['rate'].'/5</p>';
+									
+									$rate = (int)$product['rate'];
+									for ($i = 0 ;$i<$rate;$i++)
+									{
+									?>
+									<i class="fa fa-star fa-1x" style="color:yellow"></i>
+									<?php 
+									}
+									if((float)$product['rate']!=(int)$product['rate'])
+									{
+										echo '<i class="fa fa-star-half-full fa-1x" style="color:yellow"></i>';										
+									}
+									?>
 									<input id="product_id" style=" visibility: hidden;" value="<?php echo $_GET['id']; ?>">
 									<div id="list-comment">
 										<!-- <div class="col-sm-1"></div>

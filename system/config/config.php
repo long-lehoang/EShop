@@ -8,5 +8,4 @@
     // Thông số controller và action mặc định
     define('CONTROLLER_DEFAULT', 'index');
     define('ACTION_DEFAULT', 'index');
-
 ?>

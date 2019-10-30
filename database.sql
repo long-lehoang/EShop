@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS PRODUCT (
     productor_id int NOT NULL,
     category_id int NOT NULL,
     user_id int NOT NULL,
-    info text NOT NULL
+    info text NOT NULL,
+    rate float DEFAULT 0,
     
 )   ENGINE = MyISAM;
 
@@ -124,7 +125,7 @@ ADD FOREIGN KEY (id) REFERENCES PRODUCT(id) ON DELETE CASCADE;
 -- view list product --
 CREATE VIEW VIEW_PRODUCT
     AS
-    SELECT PRODUCT.id as id,PRODUCT.name as name,PRODUCT.quantity as quantity,PRODUCT.price as price,PRODUCT.info as info,CATEGORY.name as category,PRODUCTOR.name as productor,PRODUCT.sold as sold
+    SELECT PRODUCT.id as id,PRODUCT.name as name,PRODUCT.quantity as quantity,PRODUCT.price as price,PRODUCT.info as info,CATEGORY.name as category,PRODUCTOR.name as productor,PRODUCT.sold as sold,PRODUCT.rate as rate
     FROM PRODUCT,CATEGORY,PRODUCTOR WHERE PRODUCT.category_id = CATEGORY.id AND PRODUCT.productor_id = PRODUCTOR.id
     ORDER BY id ASC
 
