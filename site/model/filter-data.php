@@ -80,7 +80,7 @@ if(isset($_POST['action']))
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
-									<div class="productinfo text-center">
+									<div class="productinfo text-center" >
 										<?php try{
 											$stmt = $conn->prepare('SELECT image FROM IMAGE_PRODUCT WHERE id =:id');
 											$stmt->execute([":id"=>$data['id']]);

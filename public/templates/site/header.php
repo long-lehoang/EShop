@@ -9,7 +9,7 @@
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/font-awesome.min.css" rel="stylesheet">
     <link href="public/css/prettyPhoto.css" rel="stylesheet">
-    <!-- <link href="public/css/price-range.css" rel="stylesheet"> -->
+    <link href="public/css/price-range.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" integrity="sha256-p6xU9YulB7E2Ic62/PX+h59ayb3PBJ0WFTEQxq0EjHw=" crossorigin="anonymous" />
     <link href="public/css/animate.css" rel="stylesheet">
 	<link href="public/css/main1.css" rel="stylesheet">	
@@ -24,47 +24,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="public/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="public/images/ico/apple-touch-icon-57-precomposed.png">
 	
-	<style>
-		.slidecontainer {
-		width: 60%;
-		}
-		#loading{
-			text-align:center;
-			background: url('public/images/ajax-loader.gif') no-repeat center;
-			height:150px;
-		}
-		.slider {
-		-webkit-appearance: none;
-		width: 100%;
-		height: 10px;
-		background: #d3d3d3;
-		outline: none;
-		opacity: 0.7;
-		-webkit-transition: .2s;
-		transition: opacity .2s;
-		}
-
-		.slider:hover {
-		opacity: 1;
-		}
-
-		.slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 15px;
-		height: 15px;
-		background: #4CAF50;
-		cursor: pointer;
-		}
-
-		.slider::-moz-range-thumb {
-		width: 20px;
-		height: 10px;
-		background: #4CAF50;
-		cursor: pointer;
-		}	
-	</style>
-
 </head><!--/head-->
 
 <body>
