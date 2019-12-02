@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS EShop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE EShop;
+
 CREATE TABLE IF NOT EXISTS USER(
     id int AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
@@ -19,9 +23,8 @@ CREATE TABLE IF NOT EXISTS PRODUCT (
     sold DECIMAL(15,2) DEFAULT 0,
     productor_id int NOT NULL,
     category_id int NOT NULL,
-    user_id int NOT NULL,
     info text NOT NULL,
-    rate float DEFAULT 0,
+    rate float DEFAULT 0
     
 )   ENGINE = MyISAM;
 
@@ -46,7 +49,7 @@ CREATE TABLE IF NOT EXISTS PAYMENT (
     address VARCHAR(255) NOT NULL,
     voucher_id int,
     time datetime DEFAULT CURRENT_TIMESTAMP,
-    status boolean DEFAULT 0,
+    status boolean DEFAULT 0
 )   ENGINE = MyISAM;
 
 CREATE TABLE IF NOT EXISTS CART(
@@ -64,15 +67,13 @@ CREATE TABLE IF NOT EXISTS VOUCHER(
 CREATE TABLE IF NOT EXISTS CART_PRODUCT(
     cart_id int,
     product_id int,
-    quantity DECIMAL(15,2),
-    CHECK (quantity>0),
+    quantity DECIMAL(15,2) CHECK (quantity>0),
     CONSTRAINT PK_CART_PRODUCT PRIMARY KEY(cart_id,product_id)
 )   ENGINE = MyISAM;
 
 CREATE TABLE IF NOT EXISTS IMAGE_PRODUCT(
-    id int NOT NULL,
-    image VARCHAR(255),
-    CONSTRAINT PK_IMAGE_PRODUCT PRIMARY KEY (id,image)
+    id int AUTO_INCREMENT PRIMARY KEY,
+    image VARCHAR(255)
 
 )   ENGINE = MyISAM;
 
@@ -83,7 +84,7 @@ CREATE TABLE IF NOT EXISTS COMMENT(
     time datetime DEFAULT now(),
     comment text,
     star int,
-    name varchar(255)
+    id_user int
 )   ENGINE = MyISAM;
 
 -- CREATE INDEX FULLTEXT FOR COL NAME OF TABLE PRODUCT--
@@ -95,7 +96,7 @@ ADD FOREIGN KEY (parent) REFERENCES COMMENT(id) ON DELETE CASCADE;
 ALTER TABLE COMMENT
 ADD FOREIGN KEY (product_id) REFERENCES PRODUCT(id) ON DELETE CASCADE;
 ALTER TABLE COMMENT
-ADD FOREIGN KEY (name) REFERENCES USER(name) ON DELETE CASCADE;
+ADD FOREIGN KEY (id_user) REFERENCES USER(id) ON DELETE CASCADE;
 -- foreign key --
 ALTER TABLE PRODUCT
 ADD FOREIGN KEY (productor_id) REFERENCES PRODUCTOR(id) ON DELETE SET NULL;
@@ -129,3 +130,4 @@ CREATE VIEW VIEW_PRODUCT
     FROM PRODUCT,CATEGORY,PRODUCTOR WHERE PRODUCT.category_id = CATEGORY.id AND PRODUCT.productor_id = PRODUCTOR.id
     ORDER BY id ASC
 
+INSERT INTO `USER` (`id`, `username`, `password`, `email`, `phone`, `fullname`, `birthday`, `sex`, `address`, `isadmin`) VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'long.bk.khmt@gmail.com', '0938186100', 'Admin', '24/02/1999', '0', 'KTX Khu B DHQG TPHCM', '1')

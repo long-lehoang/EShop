@@ -7,7 +7,7 @@
         public function indexAction()
         {
             // neu da login
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             // Load view
             {   
                 //load view
@@ -22,7 +22,7 @@
         public function addproductAction()
         {
             //session_start();
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load add product page
             $this->view->load('add_product');
             else
@@ -32,7 +32,7 @@
         }
         public function editproductAction()
         {
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load add product page
             $this->view->load('edit_product');
             else
@@ -44,7 +44,7 @@
         /*------------ORDER VIEW-----------  */
         public function orderAction()
         {
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load list order
             $this->view->load('list_order');
             //show
@@ -55,7 +55,7 @@
         }
         public function neworderAction()
         {
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load list new order
             $this->view->load('new_order');
             else
@@ -65,7 +65,7 @@
         }
         public function oldorderAction()
         {
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load list old order
             $this->view->load('old_order');
             else
@@ -78,7 +78,7 @@
         public function loginAction()
         {
             //session_start();
-            if(!isset($_SESSION['name'])||!isset($_SESSION['is_admin']))
+            if(!isset($_SESSION['name'])||!isset($_SESSION['isadmin']))
             {// Load view
                 $this->view->load('login');
                 $this->view->show();
@@ -107,7 +107,7 @@
 
         /*-------------CATEGORY VIEW------------*/ 
         public function categoryAction(){
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load category
             $this->view->load('list_category');
             else
@@ -137,7 +137,7 @@
         /*-------------PRODUCTOR VIEW------------*/ 
         //list
         public function productorAction(){
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load productor
             $this->view->load('list_productor');
             else

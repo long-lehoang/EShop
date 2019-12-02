@@ -13,7 +13,7 @@
     //mở file Common.php, file này chứa hàm Load() chạy hệ thống
     include_once PATH_SYSTEM . '/core/Common.php';
     session_start();
-    if(isset($_SESSION['is_admin'])&&($_GET['a']!='register')&&($_GET['c']!='ajax'))
+    if(isset($_SESSION['isadmin'])&&($_GET['a']!='register')&&($_GET['c']!='ajax'))
     {
 
         include PATH_TEMPLATE.'/header.php';
@@ -22,7 +22,7 @@
     }
     // Chương trình chính
     load();
-    if(isset($_SESSION['is_admin'])&&($_GET['a']!='register')&&($_GET['c']!='ajax'))
+    if(isset($_SESSION['isadmin'])&&($_GET['a']!='register')&&($_GET['c']!='ajax'))
     {
         include PATH_TEMPLATE.'/footer.php';
     }

@@ -6,7 +6,7 @@ class Product_Controller extends Controller
     
     public function addAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
         //load model add product
         $this->model->load('add_product');
         else
@@ -17,7 +17,7 @@ class Product_Controller extends Controller
     }
     public function addquantityAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
         //load model add product
         $this->model->load('add_quantity');
         else
@@ -28,7 +28,7 @@ class Product_Controller extends Controller
     }
     public function subquantityAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
         //load model add product
         $this->model->load('sub_quantity');
         else
@@ -39,7 +39,7 @@ class Product_Controller extends Controller
     }
     public function editAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
         //load model edit product
         $this->model->load('edit_product');
         else
@@ -51,7 +51,7 @@ class Product_Controller extends Controller
 
     public function deleteAction()
         {
-            if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+            if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load model delete product
             $this->model->load('delete_product');
             else

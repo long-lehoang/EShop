@@ -14,9 +14,9 @@ if(!defined('PATH_SYSTEM')) die ('Bad Request');
         {
             unset($_SESSION['user']);
         }
-        if (isset($_SESSION['is_admin']))
+        if (isset($_SESSION['isadmin']))
         {
-            unset($_SESSION['is_admin']);
+            unset($_SESSION['isadmin']);
         }
         session_destroy();
 ?>

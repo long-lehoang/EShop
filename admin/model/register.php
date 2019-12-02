@@ -78,8 +78,8 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
         //Kiem tra ngay sinh
         //Kiểm tra dạng nhập vào của ngày sinh
         try{
-        $stmt = $conn->prepare('INSERT INTO USER (username,password,email,phone,fullname,birthday,sex,address,is_admin) 
-        VALUES (:user,:password,:email,:phone,:fullname,:birthday,:sex,:address,:is_admin)');
+        $stmt = $conn->prepare('INSERT INTO USER (username,password,email,phone,fullname,birthday,sex,address,isadmin) 
+        VALUES (:user,:password,:email,:phone,:fullname,:birthday,:sex,:address,:isadmin)');
         //Set values
         $isadmin='1';
         $stmt->bindParam(':user',$user);
@@ -90,7 +90,7 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
         $stmt->bindParam(':birthday',$birthday);
         $stmt->bindParam(':sex',$sex);
         $stmt->bindParam(':address',$address);
-        $stmt->bindParam(':is_admin',$isadmin);
+        $stmt->bindParam(':isadmin',$isadmin);
         //execute
         
         $stmt->execute();

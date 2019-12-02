@@ -94,7 +94,7 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
         
         $stmt->execute();
             
-        echo "Dang Ki Thanh Cong.<a href='?c=view'>Về trang chủ</a>";
+        echo "Dang Ki Thanh Cong.<a href='?c=index'>Về trang chủ</a>";
         }
         catch(PDOException $e){
             echo "Khong the them tai khoan!\n";

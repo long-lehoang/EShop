@@ -15,7 +15,7 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
             exit;
         }
         //kiem tra tai khoan co ton tai trong database
-        $stmt = $conn->prepare('SELECT * FROM USER WHERE username = :user AND password = :password AND is_admin=1');
+        $stmt = $conn->prepare('SELECT * FROM USER WHERE username = :user AND password = :password AND isadmin=1');
         try{
         $password = md5($password);
     
@@ -37,7 +37,7 @@ if (!defined('PATH_SYSTEM')) die ('Bad Request');
         $_SESSION['name']=$data['fullname'];
         $_SESSION['user']=$data['username'];
         $_SESSION['user_id']=$data['id'];
-        $_SESSION['is_admin']=$data['is_admin'];
+        $_SESSION['isadmin']=$data['isadmin'];
         }
 
 ?>

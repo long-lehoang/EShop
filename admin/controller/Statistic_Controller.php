@@ -6,7 +6,7 @@ class Statistic_Controller extends Controller
     //statistic of category follow by everyday
     public function categoryAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
         //load 
         {
             $this->view->load('statistic');
@@ -18,7 +18,7 @@ class Statistic_Controller extends Controller
     }
     public function hotsaleAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load 
             {
                 $this->view->load('top_sale');

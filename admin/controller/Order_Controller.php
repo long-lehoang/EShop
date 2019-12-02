@@ -5,7 +5,7 @@ class Order_Controller extends Controller
 {
     public function acceptAction()
     {
-        if(isset($_SESSION['name'])&&isset($_SESSION['is_admin']))
+        if(isset($_SESSION['name'])&&isset($_SESSION['isadmin']))
             //load model delete order
             $this->model->load('accept_order');
         else

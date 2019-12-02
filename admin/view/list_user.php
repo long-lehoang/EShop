@@ -12,7 +12,7 @@ die('Ban khong duoc phep thuc hien tac vu nay');
 header('Content-Type:text/html; charset=UTF-8');
 try
 {
-    $stmt = $conn->prepare('SELECT * FROM USER WHERE is_admin = 1');
+    $stmt = $conn->prepare('SELECT * FROM USER WHERE isadmin = 1');
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $stmt->execute();
     $list = $stmt->fetchAll();
